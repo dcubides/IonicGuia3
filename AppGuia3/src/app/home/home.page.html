@@ -36,9 +36,13 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-input placeholder="Base" [(ngModel)]="tipodato" name="tipodato"></ion-input>
+  <ion-input placeholder="string" [(ngModel)]="tipodatoString" name="tipodatoString"></ion-input>
+  <ion-input placeholder="bool" [(ngModel)]="tipodatoBool" name="tipodatoBool"></ion-input>
+  <ion-input placeholder="number" [(ngModel)]="tipodatoNumber" name="tipodatoNumber"></ion-input>
   <ion-button (click)="obtenertipodato()" color="primary">ver tipo dato </ion-button>
-  <p> El tipo de datos ingresado es: <b>{{ resultdato }} {{ tipodato }}</b> </p>
+  <p> El tipo de datos ingresado es: <b>{{ resultdato1 }} {{ tipodatoString }}</b> </p>
+  <p> El tipo de datos ingresado es: <b>{{ resultdato2 }} {{ tipodatoBool }}</b> </p>
+  <p> El tipo de datos ingresado es: <b>{{ resultdato3 }} {{ tipodatoNumber }}</b> </p>
 
 
 </ion-content>

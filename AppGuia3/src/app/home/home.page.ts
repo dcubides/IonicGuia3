@@ -31,21 +31,44 @@ calcularPerimetroyArea(){
 
 
 logForm() {
-  //this.resultado = this.todo.base * this.todo.altura;
-} //}
-
-tipodato:any;
-resultdato:any;
-obtenertipodato(){ 
-
-
-  this.resultdato = (typeof(this.tipodato))
-}
-
-
   
+} 
 
+tipodatoString:any;
+tipodatoBool:any;
+tipodatoNumber:any;
+resultdato1:any;
+resultdato2:any;
+resultdato3:any;
 
+obtenertipodato(){ 
+  
+  this.resultdato1 = StringConverter(this.tipodatoString);
+  this.resultdato2 = BooleanConverter(this.tipodatoBool);
+  this.resultdato3 = NumberConverter(this.tipodatoNumber);
+}
 
 
 }
+
+export var StringConverter = (value: any) => {
+  if (value === null || value === undefined || typeof value === "string")
+      return value;
+      
+  return value.toString();
+}
+
+export var BooleanConverter = (value: any) => {
+  if (value === null || value === undefined || typeof value === "boolean")
+      return value;
+
+  return value.toString() === "true";
+}
+
+export var NumberConverter = (value: any) => {
+  if (value === null || value === undefined || typeof value === "number")
+     { return value; }
+     
+  return parseFloat(value.toString());
+}
+
