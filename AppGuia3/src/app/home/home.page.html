@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Guía 3
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Solucion primer punto.</ion-card-title>
+      <ion-card-subtitle>Ejercicio con template literal</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p></p>
+      <p>{{ tota }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Solucion segundo punto</ion-card-title>
+      <ion-card-subtitle>Ingresa los datos de base y altura del rectangulo para calcular el área y el perimetro
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <form #form="ngForm" (ngSubmit)="logForm(form)" novalidate>
+        <ion-input placeholder="Base" type="number" [(ngModel)]="base2" name="base2"></ion-input>
+        <ion-input placeholder="Altura" type="number" [(ngModel)]="altura2" name="altura2"></ion-input>
+        <ion-button (click)="calcularPerimetroyArea()" color="primary">Calcular área y perímetro </ion-button>
+      </form>
+      <br/>
+      <p> El área  es: <b>{{ resultadoArea}}</b> </p>
+      <p> El perímero es: <b>{{ resultadoBase}}</b></p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-input placeholder="Base" [(ngModel)]="tipodato" name="tipodato"></ion-input>
+  <ion-button (click)="obtenertipodato()" color="primary">ver tipo dato </ion-button>
+  <p> El tipo de datos ingresado es: <b>{{ resultdato }} {{ tipodato }}</b> </p>
+
+
+</ion-content>
