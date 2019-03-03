@@ -8,13 +8,14 @@ import {  FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['home.page.scss'],
 })
 
-export class HomePage {
+export class HomePage{
 
   nombre:string = "Juan Perez";
   saludo:string = "Hola";
   edad:number = 32;
   
-  
+  constructor(){}
+
  tota:string = `${this.saludo} Mi nombre es ${this.nombre} y tengo ${this.edad} años`;
 
 
@@ -46,6 +47,11 @@ obtenertipodato(){
   this.resultdato1 = StringConverter(this.tipodatoString);
   this.resultdato2 = BooleanConverter(this.tipodatoBool);
   this.resultdato3 = NumberConverter(this.tipodatoNumber);
+  this.NombreLore();
+}
+
+NombreLore(): void{
+  alert("yo soy un metodo");
 }
 
 
@@ -54,7 +60,7 @@ obtenertipodato(){
 export var StringConverter = (value: any) => {
   if (value === null || value === undefined || typeof value === "string")
       return value;
-      
+
   return value.toString();
 }
 
